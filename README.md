@@ -1,6 +1,6 @@
 # Codesweeper
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4, [Node](https://nodejs.org) version 6.12.3 and npm 3.10.10
 
 ## Development server
 
