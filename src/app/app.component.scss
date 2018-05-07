@@ -1,0 +1,153 @@
+#minesweeper {
+    border: 1px solid grey;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -o-border-radius: 10px 10px 10px 10px;
+    -ms-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    padding: 5px;
+    width: 350px;
+    min-width: 350px;
+	.modes, .custom-inputs, .stats {
+		height: 35px;
+		position: relative;
+	}
+	.button {
+		box-shadow: 0 0 5px white inset;
+		background-color: silver;
+		cursor: pointer;
+		float: left;
+		text-align: center;
+		width: 25%;
+		display: block;
+		padding: 5px 0;
+		&.act {
+			background-color: grey;
+		}
+		&:first-child {
+			border-radius: 10px 0 0 10px;
+		}
+		&:last-child {
+			border-radius: 0 10px 10px 0;
+		}
+	}
+	.cfgCustom {
+		width:40px;
+	}
+	.actions{
+			margin: 0 auto;
+			width: 10ü0px;
+			height: 30px;
+		.resetGame {
+			margin: 0 auto;
+			padding: 0;
+			height: 30px;
+			width: 30px;
+			font-size: 16px;
+		}
+	}
+	.digits {
+		background-color: black;
+		color: red;
+		padding: 1px 5px;
+		font-size: 20px;
+		height: 30px;
+		line-height: 30px;
+		width: 40px;
+		&.minesCount  {
+			position: absolute;
+			left: 0;
+			top:0;
+		}
+		&.timeCount {
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+	.content {
+		margin: 0 auto;
+		background: -moz-linear-gradient(left top , blue, #C50A1F) repeat scroll 0 0 transparent;
+		background: -webkit-linear-gradient(left top , blue, #C50A1F) repeat scroll 0 0 transparent;
+		background: -ms-linear-gradient(left top , blue, #C50A1F) repeat scroll 0 0 transparent;
+		background: -o-linear-gradient(left top , blue, #C50A1F) repeat scroll 0 0 transparent;
+		background: linear-gradient(to right bottom , blue, #C50A1F) repeat scroll 0 0 transparent;
+		.area {
+			border-collapse: collapse;
+			margin: 0 auto;
+			.row {
+				.mineSuspect.mine {
+					background-image: url('/assets/mine2.png');
+					background-repeat: no-repeat;
+					background-position: center center;
+				}
+				.mineSuspect.noMine {
+					background-image: url('/assets/mine3.png');
+					background-repeat: no-repeat;
+					background-position: center center;
+				}
+				.mine {
+					background-image: url('/assets/mine1.png');
+					background-repeat: no-repeat;
+					background-position: center center;
+				}
+				.cell {
+					border: 1px solid black;
+					cursor: pointer;
+					height: 23px;
+					text-align: center;
+					width: 24px;
+					font-weight: bold;
+					&.c_1 {
+						color: blue;
+					}
+					&.c_2 {
+					color: green;
+					}
+					&.c_3 {
+					color: red;
+					}
+					&.c_4 {
+					color: darkblue;
+					}
+					&.open {
+						background-color: #cccccc;
+					}
+					&.closed {
+						-moz-box-shadow: 0 0 9px 0 black inset;
+						-webkit-box-shadow: 0 0 9px 0 black inset;
+						box-shadow: 0 0 9px 0 black inset;
+					}
+					span {
+						width: 20px;
+						display: inline-block;
+					}
+				}
+			}
+			&.running{
+				.row {
+					.cell.closed:hover {
+					background-color: grey;
+					font-weight: bold;
+					}
+					.mineSuspect {
+						background-image: url('/assets/mine4.png');
+						background-repeat: no-repeat;
+						background-position: center center;
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
